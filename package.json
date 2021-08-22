@@ -1,7 +1,8 @@
 {
   "name": "incode-language",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The InCode Programming Language",
+  "main": "dist/Compiler.js",
   "scripts": {
     "build": "tsc --project ."
   },
