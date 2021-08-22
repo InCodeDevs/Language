@@ -1,0 +1,26 @@
+{
+  "name": "incode-language",
+  "version": "1.0.0",
+  "description": "The InCode Programming Language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InCodeDevs/Language.git"
+  },
+  "keywords": [
+    "InCode",
+    "Programming",
+    "German",
+    "Simple",
+    "Language"
+  ],
+  "author": "The InCode Developers <https://github.com/InCodeDevs>",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/InCodeDevs/Language/issues"
+  },
+  "homepage": "https://github.com/InCodeDevs/Language#readme"
+}
