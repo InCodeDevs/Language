@@ -1,8 +1,10 @@
 {
   "name": "incode-language",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "The InCode Programming Language",
-  "main": "dist/Compiler.js",
+  "main": "dist/incode.js",
+  "typings": "src/index.d.ts",
+  "bin": "",
   "scripts": {
     "build": "tsc --project ."
   },
@@ -22,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/InCodeDevs/Language/issues"
   },
-  "homepage": "https://github.com/InCodeDevs/Language#readme"
+  "homepage": "https://github.com/InCodeDevs/Language#readme",
+  "devDependencies": {
+    "@types/node": "^16.7.1"
+  }
 }

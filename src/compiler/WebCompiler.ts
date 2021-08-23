@@ -746,4 +746,5 @@
      }
  
  }
- 
+
+export default new WebCompiler();
