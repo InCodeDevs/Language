@@ -1,6 +1,6 @@
 {
   "name": "incode-language",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The InCode Programming Language",
   "main": "dist/incode.js",
   "typings": "src/index.d.ts",
