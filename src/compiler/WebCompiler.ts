@@ -719,6 +719,20 @@ export class WebCompiler {
                     r = "";
                 }
                 break;
+            case "warte":
+                if (args.length === 3) {
+                    let milliseconds = "";
+                    if (args[2].toLowerCase() === "sekunden") {
+                        milliseconds = args[1] + "000"
+                    } else if (args[2].toLowerCase() === "millisekunden") {
+                        milliseconds = args[1]
+                    }
+
+                    r = `await new Promise(done => setTimeout(() => done(), ${milliseconds}))`
+                } else {
+
+                }
+                break;
             default:
                 if (args[0] != "//") {
                     console.log("KeyWord: " + args[0] + ". In statement: " + JSON.stringify(statement));
