@@ -217,13 +217,15 @@ export class WebCompiler {
                 name: "witdh",
                 type: "attribute",
                 useSetAttribute: false,
-                append: "px"
+                prepend: "\"",
+                append: "px\""
             },
             "rahmenhöhe": {
                 name: "height",
                 type: "attribute",
                 useSetAttribute: false,
-                append: "px"
+                prepend: "\"",
+                append: "px\""
             },
             "quelle": {
                 name: "src",
@@ -586,7 +588,7 @@ export class WebCompiler {
                             if (this.options.settable[args[2].toLowerCase()].useSetAttribute) {
                                 r = args[4] + ".setAttribute(\"" + this.options.settable[args[2].toLowerCase()].name + "\", \"" + this.getArgsInRange(args, 6, args.length) + "\");"
                             } else {
-                                r = args[4] + "." + this.options.settable[args[2].toLowerCase()].name + " = " + this.getArgsInRange(args, 6, args.length) + this.options.settable[args[2].toLowerCase()].append
+                                r = args[4] + "." + this.options.settable[args[2].toLowerCase()].name + " = " + (this.options.settable[args[2].toLowerCase()].prepend || "") + this.getArgsInRange(args, 6, args.length) + this.options.settable[args[2].toLowerCase()].append
                             }
                         }
                     } else {
