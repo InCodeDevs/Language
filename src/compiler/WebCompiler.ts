@@ -9,8 +9,6 @@ import {Compiler} from "./Compiler";
 import {ErrorCodes} from "../util/ErrorCodes";
 
 export class WebCompiler {
-
-    public static logger: Logger
     private static errorCodes: ErrorCodes = new ErrorCodes();
 
     private static options = {
@@ -528,13 +526,15 @@ export class WebCompiler {
         switch (args[0].toLowerCase()) {
             case "importiere":
                 let url = "";
-                for (let i = 1; i < args.length - 2; i++) {
+                for (let i = 1; i < args.length; i++) {
                     url += args[i];
                     if (i + 1 !== args.length) {
                         url += " "
                     }
                 }
-                r = `fetch("${url}").then(r => eval(r));`
+                let __var_name = `__incode__fetch_${this.randomString(16)}`
+
+                r = `let ${__var_name} = await fetch(${url});\neval(${__var_name});`
                 break;
             case "erstelle":
                 if (args.length == 2) {
