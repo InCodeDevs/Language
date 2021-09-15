@@ -484,14 +484,14 @@ export class WebCompiler {
         this.c = code;
 
         // create var for result
-        let result: string = ""
+        let result: string = "(async () => {\nwindow.incode = {};\n"
 
         // compile each codeBlock
         Compiler.extractCodeBlocks(code).forEach(codeBlock => {
             result += this.compileCodeBlock(codeBlock)
         })
 
-        console.log(result)
+        result += "\n})();"
 
         // return the final javascript code
         return result
@@ -555,7 +555,7 @@ export class WebCompiler {
                             r = "let " + args[1] + " = document.createElement('" + this.options.creatable[args[3].toLowerCase()] + "')"
                         } else {
                             if (args[3].toLowerCase() === 'methode:' || args[3].toLowerCase() === 'methode') {
-                                r = "function " + args[1] + "()"
+                                r = "window.incode." + args[1] + " = () =>"
                             } else {
                                 this.errorCodes.prettyPrint(3, statement)
                                 console.log("A line was ignored because it contained errors.")
@@ -600,7 +600,7 @@ export class WebCompiler {
                 break
             case "rufe":
                 if (args.length === 5) {
-                    r = args[3] + "()"
+                    r = "window.incode." + args[3] + "()"
                 } else {
                     this.errorCodes.prettyPrint(2, statement)
                     console.log("Missing KeyWord: als. In statement: " + JSON.stringify(statement))
