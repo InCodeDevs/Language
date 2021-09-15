@@ -17,6 +17,7 @@ export class WebCompiler {
             "absatz": "p",
             "text": "span",
             "bild": "img",
+            "überschrift": "h1",
             "überschrift1": "h1",
             "überschrift2": "h2",
             "überschrift3": "h3",
