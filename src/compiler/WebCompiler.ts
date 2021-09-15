@@ -680,7 +680,7 @@ export class WebCompiler {
                     if (args.length === 7) {
                         // event listeners
                         if (this.options.events[args[2].toLowerCase()]) {
-                            r = args[1] + ".setAttribute('" + this.options.events[args[2].toLowerCase()] + "', '" + args[5] + "()')"
+                            r = args[1] + ".setAttribute('" + this.options.events[args[2].toLowerCase()] + "', 'window.incode." + args[5] + "()')"
                         } else {
                             console.log(args[2])
                             this.errorCodes.prettyPrint(6, statement)
